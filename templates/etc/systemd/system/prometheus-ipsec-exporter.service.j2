@@ -1,0 +1,14 @@
+[Unit]
+Description=Prometheus IPSec Exporter
+After=network.target
+
+[Service]
+Type=simple
+User={{ prometheus_exporters_common_user }}
+Group={{ prometheus_exporters_common_group }}
+ExecStart={{ prometheus_exporters_common_root_dir }}/ipsec_exporter_current/ipsec_exporter {% for flag, flag_value in prometheus_ipsec_exporter_config_flags.items() %}--{{ flag }}={{ flag_value }} {% endfor %}
+SyslogIdentifier=prometheus_ipsec_exporter
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
