@@ -27,7 +27,7 @@
   file:
     path: "{{ prometheus_ipsec_exporter_release_name }}"
     recurse: yes
-    owner: "{{ prometheus_exporters_common_user}}"
+    owner: "{{ prometheus_exporters_common_user }}"
     group: "{{ prometheus_exporters_common_group }}"
   when: prometheus_ipsec_exporter_updated | changed
 

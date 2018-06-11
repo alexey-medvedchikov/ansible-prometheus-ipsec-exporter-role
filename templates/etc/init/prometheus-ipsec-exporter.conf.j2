@@ -4,8 +4,8 @@ stop on runlevel [016]
 
 respawn
 {% if upstart_version.stdout | replace("init (upstart ", "") |replace(")","") | version_compare('1.4', '>=') %}
-setuid {{ prometheus_exporters_common_user }}
-setgid {{ prometheus_exporters_common_group }}
+setuid root
+setgid root
 {% endif %}
 
 script
