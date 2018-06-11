@@ -6,5 +6,5 @@ prometheus_ipsec_exporter_release_name: "ipsec_exporter-{{ prometheus_ipsec_expo
 prometheus_ipsec_exporter_url: "https://github.com/dennisstritzke/ipsec_exporter/releases/download/v{{ prometheus_ipsec_exporter_version }}/{{ prometheus_ipsec_exporter_release_name }}.tar.gz"
 
 prometheus_ipsec_exporter_config_flags:
-  'web.listen-address': '0.0.0.0:9101'
+  'web.listen-address': '9101'
   'collector.ipsec.conf': '/etc/ipsec.conf'

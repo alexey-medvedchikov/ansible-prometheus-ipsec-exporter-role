@@ -25,9 +25,9 @@ All needed packages will be installed with this role.
 - hosts: ipsec-exporters
   roles:
     - role: alexey-medvedchikov.prometheus-ipsec-exporter
-      prometheus_ipsec_exporter_version: v0.1.2.1
+      prometheus_ipsec_exporter_version: 0.1.2.1
       prometheus_ipsec_exporter_config_flags:
-        'web.listen-address': '0.0.0.0:9101'
+        'web.listen-address': '9101'
         'collector.ipsec.conf': '/etc/ipsec.conf'
 ```
 
