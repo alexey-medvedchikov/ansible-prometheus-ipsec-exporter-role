@@ -10,7 +10,7 @@ All needed packages will be installed with this role.
 
 | Variable                               | Type   | Choices                          | Default                                                            | Comment                                                               |
 |----------------------------------------|--------|----------------------------------|--------------------------------------------------------------------|-----------------------------------------------------------------------|
-| prometheus_ipsec_exporter_version      | string | See [ipsec_exporter][1] releases | v0.1.2.1                                                           | Version of ipsec_exporter that will be installed.                     |
+| prometheus_ipsec_exporter_version      | string | See [ipsec_exporter][1] releases | v0.2                                                               | Version of ipsec_exporter that will be installed.                     |
 | prometheus_ipsec_exporter_release_name | string |                                  | ipsec_exporter-{{ prometheus_ipsec_exporter_version }}.linux-amd64 | Name of the binary that will be download from the [releases][1]) page |
 | prometheus_ipsec_exporter_config_flags | dict   |                                  |                                                                    | Dict of key, value options to add to the start command line           |
 
@@ -25,7 +25,7 @@ All needed packages will be installed with this role.
 - hosts: ipsec-exporters
   roles:
     - role: alexey-medvedchikov.prometheus-ipsec-exporter
-      prometheus_ipsec_exporter_version: 0.1.2.1
+      prometheus_ipsec_exporter_version: 0.2
       prometheus_ipsec_exporter_config_flags:
         'web.listen-address': '9101'
         'collector.ipsec.conf': '/etc/ipsec.conf'
